@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #6adbf7;
+    color: #402392;
+    transition: 0.3s;
+}
+
+.encabezado {
+    background: #17324d;
+    color: rgb(13, 219, 30);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav h1 {
+    margin-right: auto;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+.menu a {
+    color: rgb(85, 161, 204);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.menu-btn,
+.tema-btn,
+.boton,
+.filtro {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: none;
+    background: rgb(197, 108, 153);
+}
+
+.tema-btn {
+    background: #7358bd;
+    color: #d8d52f;
+}
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #3f77c0, #c8e253);
+}
+
+.hero div {
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.hero h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.saludo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.seccion {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.seccion h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.tarjetas,
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta,
+.proyecto {
+    background: rgb(37, 172, 235);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(72, 77, 55, 0.133);
+}
+
+.tarjeta h3,
+.proyecto h3 {
+    margin-bottom: 10px;
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.habilidades span {
+    background: #df6909;
+    color: rgb(171, 228, 13);
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filtro {
+    background: #b0df08;
+}
+
+.filtro.activo {
+    background: #eecc09;
+    color: rgb(44, 2, 25);
+}
+
+.imagen-proyecto {
+    height: 100px; /* Define una altura más pequeña */
+    max-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #b6477e;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5;
+    overflow: hidden; /* Corta cualquier exceso */
+}
+
+.contacto form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #11b93b;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font: inherit;
+}
+
+.boton {
+    background: #31061e;
+    color: rgb(130, 219, 13);
+    font-weight: bold;
+}
+
+.mensaje {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+footer {
+    background: #17324d;
+    color: rgb(149, 120, 177);
+    text-align: center;
+    padding: 25px;
+}
+
+/* Modo oscuro */
+body.oscuro {
+    background: #121212;
+    color: #af3371;
+}
+
+body.oscuro .hero {
+    background: #1c1c1c;
+}
+
+body.oscuro .tarjeta,
+body.oscuro .proyecto {
+    background: #b36868;
+}
+
+body.oscuro input,
+body.oscuro textarea {
+    background: #69771c;
+    color: rgb(164, 231, 7);
+    border-color: #bd1e41;
+}
+
+@media (max-width: 750px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #639dd8;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .menu.abierto {
+        display: flex;
+    }
+
+    .tema-btn {
+        font-size: 12px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero h3 {
+        font-size: 19px;
+    }
+}
