@@ -51,7 +51,31 @@ filtros.forEach(function (boton) {
     });
 });
 
-// 5. Validación sencilla del formulario
+// 5. Demostración práctica de consumo de API con Fetch
+const obtenerApiBtn = document.getElementById("obtenerApiBtn");
+const resultadoApi = document.getElementById("resultadoApi");
+
+if (obtenerApiBtn) {
+    obtenerApiBtn.addEventListener("click", async function () {
+        resultadoApi.textContent = "Cargando datos...";
+        try {
+            // Ejemplo de API pública (PokéAPI)
+            const respuesta = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+            const datos = await respuesta.json();
+            resultadoApi.innerHTML = `
+                📌 <strong>API Respuesta:</strong><br>
+                Nombre: ${datos.name.toUpperCase()}<br>
+                ID: #${datos.id}<br>
+                Tipo: ${datos.types[0].type.name}
+            `;
+        } catch (error) {
+            resultadoApi.textContent = "Error al conectar con la API.";
+            console.error("Error Fetch:", error);
+        }
+    });
+}
+
+// 6. Validación sencilla del formulario
 const formulario = document.getElementById("formulario");
 const respuestaFormulario = document.getElementById("respuestaFormulario");
 
@@ -72,5 +96,5 @@ formulario.addEventListener("submit", function (evento) {
 
 // Fecha actual
 document.getElementById("fecha").textContent =
-    "Página creada con HTML + CSS + JavaScript | " +
+    "Página creada con HTML + CSS + JavaScript + Bootstrap | " +
     new Date().toLocaleDateString("es-BO");
