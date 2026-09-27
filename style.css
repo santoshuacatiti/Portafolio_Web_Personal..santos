@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
     background: #6adbf7;
     color: #402392;
-    transition: 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .encabezado {
@@ -70,9 +70,11 @@ body {
 
 .tema-btn {
     background: #7358bd;
-    color: #d8d52f;
+    color: #ffffff;
+    font-weight: bold;
 }
 
+/* --- FONDO IMAGEN FE02a67b-0ddb-486a-aec4-91eb2442f8f6 --- */
 .hero {
     min-height: 500px;
     display: flex;
@@ -80,11 +82,17 @@ body {
     justify-content: center;
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(135deg, #3f77c0, #c8e253);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('fe02a67b-0ddb-486a-aec4-91eb2442f8f6_3.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    transition: background 0.3s;
 }
 
-.hero div {
+.hero-contenido {
     max-width: 800px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 15px;
 }
 
 .hero h2 {
@@ -99,7 +107,8 @@ body {
 
 .saludo {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
+    color: #00d4ff;
 }
 
 .seccion {
@@ -127,6 +136,7 @@ body {
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(72, 77, 55, 0.133);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .tarjeta h3,
@@ -166,23 +176,24 @@ body {
 }
 
 .imagen-proyecto {
-    height: 100px; /* Define una altura más pequeña */
+    height: 100px;
     max-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #b6477e;
+    background: #1bb90d;
     border-radius: 10px;
     margin-bottom: 10px;
-    padding: 5;
-    overflow: hidden; /* Corta cualquier exceso */
+    padding: 5px;
+    overflow: hidden;
 }
-/* Asegurar que las imágenes dentro de la tarjeta se adapten responsivamente */
+
 .imagen-proyecto img {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
 }
+
 .contacto form {
     max-width: 600px;
     margin: auto;
@@ -209,6 +220,9 @@ textarea {
 .mensaje {
     margin-top: 12px;
     font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 footer {
@@ -218,26 +232,27 @@ footer {
     padding: 25px;
 }
 
-/* Modo oscuro */
+/* --- MODO OSCURO MEJORADO --- */
 body.oscuro {
     background: #121212;
-    color: #af3371;
-}
-
-body.oscuro .hero {
-    background: #1c1c1c;
+    color: #f1f1f1;
 }
 
 body.oscuro .tarjeta,
 body.oscuro .proyecto {
-    background: #b36868;
+    background: #1e293b;
+    color: #e2e8f0;
 }
 
 body.oscuro input,
 body.oscuro textarea {
-    background: #69771c;
-    color: rgb(164, 231, 7);
-    border-color: #bd1e41;
+    background: #2d3748;
+    color: #ffffff;
+    border-color: #4a5568;
+}
+
+body.oscuro .mensaje {
+    color: #00ff88;
 }
 
 @media (max-width: 750px) {
@@ -272,4 +287,76 @@ body.oscuro textarea {
     .hero h3 {
         font-size: 19px;
     }
+}
+/* Configuración para colocar la imagen de fondo en la sección #inicio */
+#inicio.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ocupa el alto completo de la ventana */
+
+    /* Ruta de la imagen y filtro oscuro para dar legibilidad al texto */
+    background-image: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.7)), url('fe02a67b-0ddb-486a-aec4-91eb2442f8f6.jpg');
+    background-size: cover; /* Cubre toda la sección sin deformarse */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+
+    /* Alineación del texto e hijos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Ajustes del contenedor interno de tu código */
+.hero-contenido {
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Estilo para el título flotante cian que aparece en tu imagen */
+.hero-contenido .saludo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4cc9f0; /* Azul cian de la imagen */
+    text-shadow: 0 0 10px rgba(76, 201, 240, 0.5); /* Efecto Neón */
+    margin-bottom: 15px;
+}
+
+/* Estilo del nombre */
+.hero-contenido h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.hero-contenido h3 {
+    font-size: 1.1rem;
+    color: #b0c4de;
+    margin-bottom: 20px;
+}
+
+/* Texto descriptivo */
+.hero-contenido p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Botón "Mostrar bienvenida" */
+.hero-contenido .boton {
+    background-color: #6a0dad;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.hero-contenido .boton:hover {
+    background-color: #8a2be2;
+    box-shadow: 0 0 12px rgba(138, 43, 226, 0.6);
 }
